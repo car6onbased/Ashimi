@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashimi Adefesobi — Senior Service Designer</title>
+  <meta name="description" content="Senior service designer with 15 years designing end-to-end public and commercial services. London.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #F3EDE0;
+      --paper:       #FAF7F1;
+      --black:       #1A1816;
+      --mid:         #4A4540;
+      --warm-grey:   #928B82;
+      --border:      #DDD7CC;
+      --accent:      #C04A1A;
+      --accent-dim:  rgba(192, 74, 26, 0.12);
+      --accent-bdr:  rgba(192, 74, 26, 0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--warm-grey);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      padding: 5rem 2.5rem 3.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(4.5rem, 13vw, 10rem);
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+    }
+
+    /* ─── META STRIP ──────────────────────────────────── */
+    .meta-strip {
+      display: flex;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      padding: 0.9rem 1.5rem;
+      border-right: 1px solid var(--border);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warm-grey);
+      white-space: nowrap;
+    }
+
+    .meta-item:first-child { padding-left: 0; }
+    .meta-item:last-child  { border-right: none; }
+
+    .meta-item strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--black);
+      margin-bottom: 0.15rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── PROFILE ─────────────────────────────────────── */
+    .profile {
+      max-width: 660px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--mid);
+    }
+
+    /* ─── SECTIONS ────────────────────────────────────── */
+    .section {
+      padding: 4rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 2.5rem;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--warm-grey);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--black);
+      margin-bottom: 0;
+    }
+
+    /* ─── WORK GRID ───────────────────────────────────── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: var(--border);
+      margin-top: 1.5px;
+    }
+
+    /* ─── CARDS ───────────────────────────────────────── */
+    .card {
+      background: var(--paper);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .card.featured {
+      grid-column: 1 / -1;
+      background: var(--black);
+    }
+
+    .card-sector {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-bdr);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 1.4rem;
+      align-self: flex-start;
+    }
+
+    .card.featured .card-sector {
+      background: rgba(192, 74, 26, 0.18);
+      border-color: rgba(192, 74, 26, 0.45);
+    }
+
+    .card-client {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      text-transform: uppercase;
+      line-height: 0.93;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    .card.featured .card-client { color: #F3EDE0; }
+
+    .card-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--warm-grey);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.4rem;
+    }
+
+    .card.featured .card-meta { color: #706860; }
+
+    .card-desc {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--mid);
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .card.featured .card-desc { color: #A89E92; }
+
+    .card-outcome {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+
+    .card.featured .card-outcome { border-top-color: #2E2B28; }
+
+    .card-cta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warm-grey);
+      text-decoration: none;
+      align-self: flex-start;
+      transition: color 0.15s;
+    }
+
+    .card-cta:hover { color: var(--accent); }
+    .card.featured .card-cta { color: #504840; }
+    .card.featured .card-cta:hover { color: var(--accent); }
+
+    /* ─── CONTACT ─────────────────────────────────────── */
+    .contact {
+      padding: 4rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .contact-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 7vw, 6rem);
+      text-transform: uppercase;
+      line-height: 0.88;
+      color: var(--black);
+    }
+
+    .contact-detail {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--warm-grey);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--black);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 1.75rem;
+      transition: color 0.15s;
+    }
+
+    .contact-value:hover { color: var(--accent); }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--warm-grey);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 720px) {
+      nav    { padding: 1rem 1.25rem; }
+      .hero  { padding: 3rem 1.25rem 2.5rem; }
+      .section  { padding: 2.5rem 1.25rem; }
+      .contact  { padding: 2.5rem 1.25rem; }
+      hr.rule   { margin: 0 1.25rem; }
+      footer    { padding: 1.25rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+
+      .meta-strip { flex-direction: column; }
+      .meta-item  { border-right: none; border-bottom: 1px solid var(--border); padding-left: 0; }
+      .meta-item:last-child { border-bottom: none; }
+
+      .work-grid { grid-template-columns: 1fr; }
+      .card.featured { grid-column: 1; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-name">Ashimi Adefesobi</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1 class="hero-name">Ashimi<br>Adefesobi</h1>
+    <p class="hero-title">Senior Service Designer</p>
+
+    <div class="meta-strip">
+      <div class="meta-item"><strong>15+</strong>Years</div>
+      <div class="meta-item"><strong>Public Sector</strong>Specialism</div>
+      <div class="meta-item"><strong>Commercial &amp; Platform</strong>Range</div>
+      <div class="meta-item"><strong>London</strong>Based</div>
+      <div class="meta-item"><strong>Available</strong>Immediately</div>
+    </div>
+
+    <p class="profile">
+      Senior service designer combining systems thinking, user research and service strategy. Fifteen years designing end-to-end services across central government, local authorities, higher education and commercial sectors. Comfortable with senior stakeholders, clear about outcomes, and focused on work that holds up in production.
+    </p>
+  </header>
+
+  <hr class="rule">
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <p class="section-label">Selected work</p>
+    <h2 class="section-heading">Case Studies</h2>
+
+    <div class="work-grid">
+
+      <article class="card featured">
+        <span class="card-sector">Platform / Private Sector</span>
+        <h3 class="card-client">Takumi</h3>
+        <p class="card-meta">Lead Product and Strategy Consultant &nbsp;&middot;&nbsp; 2024</p>
+        <p class="card-desc">
+          Led service and product design for an influencer marketing platform transitioning from managed service to self-serve. Designed the handoff logic between automated and human-reviewed stages across three distinct client journey types, from ecosystem mapping through to live product delivery.
+        </p>
+        <p class="card-outcome">Shipped with no reported usability issues.</p>
+        <a href="mailto:Ashimi@msn.com?subject=Takumi case study" class="card-cta">Request case study &rarr;</a>
+      </article>
+
+      <article class="card">
+        <span class="card-sector">Local Government</span>
+        <h3 class="card-client">London Borough of Richmond</h3>
+        <p class="card-meta">Service and UX Designer &nbsp;&middot;&nbsp; 2011&ndash;2014</p>
+        <p class="card-desc">
+          Designed a postcode-led resident one-stop-shop and My Richmond, an integrated resident account covering council tax, parking, waste, planning and local services. Research included usability testing with blind residents and assistive technology users.
+        </p>
+        <p class="card-outcome">Became a reference model for councils across the country.</p>
+        <a href="mailto:Ashimi@msn.com?subject=Richmond case study" class="card-cta">Request case study &rarr;</a>
+      </article>
+
+      <article class="card">
+        <span class="card-sector">Central Government</span>
+        <h3 class="card-client">Department for Education</h3>
+        <p class="card-meta">Service Design Consultant, Methods Digital &nbsp;&middot;&nbsp; 2015&ndash;2016</p>
+        <p class="card-desc">
+          Mapped the apprenticeship service ecosystem end to end across six actor types: apprentices, employers, training providers, colleges, awarding bodies and certification bodies. Findings and options presented to senior stakeholders in London and Coventry.
+        </p>
+        <p class="card-outcome">Presented to senior DfE stakeholders; also supported discovery at the Food Standards Agency.</p>
+        <a href="mailto:Ashimi@msn.com?subject=DfE case study" class="card-cta">Request case study &rarr;</a>
+      </article>
+
+      <article class="card">
+        <span class="card-sector">Commercial / Digital Transformation</span>
+        <h3 class="card-client">Pertemps &amp; Sainsbury's</h3>
+        <p class="card-meta">Lead Process Designer &nbsp;&middot;&nbsp; 2022&ndash;2024</p>
+        <p class="card-desc">
+          Led the redesign of HGV driver recruitment for Sainsbury's, replacing a high-friction branch-based process with a live digital service. Sole designer across research, service design, UX, UI and content workstreams, coordinating with development teams in the UK and India.
+        </p>
+        <p class="card-outcome">Delivery value cited at approximately &pound;20m by the Head of Marketing.</p>
+        <a href="mailto:Ashimi@msn.com?subject=Pertemps case study" class="card-cta">Request case study &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-heading">Get<br>in touch.</h2>
+      </div>
+      <div>
+        <p class="contact-detail">Email</p>
+        <a href="mailto:Ashimi@msn.com" class="contact-value">Ashimi@msn.com</a>
+
+        <p class="contact-detail">LinkedIn</p>
+        <a href="https://linkedin.com/in/ashimi" class="contact-value" target="_blank" rel="noopener noreferrer">linkedin.com/in/ashimi</a>
+
+        <p class="contact-detail">CV and case studies</p>
+        <a href="mailto:Ashimi@msn.com?subject=CV request" class="contact-value">Available on request</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">Ashimi Adefesobi &nbsp;&middot;&nbsp; Senior Service Designer &nbsp;&middot;&nbsp; London</span>
+    <span class="footer-text">Available immediately</span>
+  </footer>
+
+</body>
+</html>
