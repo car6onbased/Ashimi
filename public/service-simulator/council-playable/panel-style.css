@@ -1,0 +1,200 @@
+/* Floating instruments, informed by Ash's studio-dashboard reference. */
+:root {
+  --ink: #202530;
+  --muted: #5e6879;
+  --green: #2d63e5;
+  --mint: #e8efff;
+  --line: #e0e5ef;
+  --paper: #fbfcff;
+  --page: #f4f6fb;
+  --glass: rgba(255, 255, 255, .89);
+  --glass-edge: rgba(255, 255, 255, .95);
+  --glass-shadow: 0 16px 44px rgba(37, 47, 73, .12), 0 3px 9px rgba(37, 47, 73, .045), inset 0 1px 0 rgba(255, 255, 255, .98);
+  --ui-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: var(--ui-font);
+  background: var(--page);
+  color: var(--ink);
+}
+
+body.world-layout { background: var(--page); }
+.world-layout .world-stage {
+  background: radial-gradient(ellipse at 52% 38%, #fcfcfe 0%, #f1f4fa 62%, #e5eaf4 100%);
+}
+.world-layout.text-mode .world-stage { background: #eef2f9; }
+.world-layout .masthead { background: linear-gradient(#f6f8fdd9, #f6f8fd00); }
+.world-layout .identity-mark { background: #252c3b; box-shadow: 0 3px 8px #1e2c4314; }
+.world-layout .identity-caption { color: #5c6779; }
+.world-layout .masthead nav { color: #414a5b; }
+.world-layout .eyebrow { color: #59657a; font-weight: 600; }
+.world-layout .small-dot, .world-layout .key-open { background: #2d63e5; }
+.world-layout .key-planned { background: #9ba6b9; }
+.world-layout .intro h1 {
+  font-family: var(--ui-font);
+  font-size: 35px;
+  font-weight: 620;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin: 13px 0 20px;
+  color: #202530;
+}
+.world-layout .intro > p:not(.eyebrow) { color: #525e70; line-height: 1.7; }
+.world-layout .map-availability, .world-layout .map-key { color: #495873; }
+.world-layout .scene-top h2 {
+  font: 600 27px/1.15 var(--ui-font);
+  letter-spacing: -1px;
+  color: #202530;
+}
+
+/* Separate the surfaces from the world through light, rather than a frame. */
+.world-layout .right-column,
+.world-layout .workshop-panel,
+.world-layout .scene-controls button,
+.world-layout .person-chip,
+.world-layout .scene-status {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  color: var(--ink);
+}
+.world-layout .right-column { border-radius: 18px; scrollbar-color: #bdc7d9 transparent; }
+.world-layout .right-column .card { padding: 24px; }
+.world-layout .right-column h2 { font-size: 22px; line-height: 1.3; letter-spacing: -.65px; font-weight: 620; }
+.world-layout .welcome-copy { font-size: 12px; line-height: 1.7; margin: 17px 0 19px; color: #536074; }
+.world-layout .card-tag { color: #53647f; font-weight: 600; letter-spacing: 1.1px; }
+.world-layout .map-mission-meta { color: #5c687d; margin: 0 0 17px; }
+.world-layout .current-hint, .world-layout .source, .world-layout .role { color: #5e6879; }
+.world-layout .conversation-header { gap: 12px; margin-bottom: 19px; }
+.world-layout .avatar { font-family: var(--ui-font); font-size: 17px; font-weight: 550; }
+.world-layout .quote { font: 450 17px/1.6 var(--ui-font); letter-spacing: -.15px; color: #263041; }
+.world-layout .source { margin-top: 16px; }
+.world-layout .insight {
+  background: rgba(238, 243, 255, .87);
+  border-left: 2px solid #9ab5f1;
+  border-radius: 0 8px 8px 0;
+  padding: 12px;
+  margin-top: 15px;
+  color: #485773;
+  line-height: 1.65;
+}
+.world-layout .conversation-actions { gap: 8px; margin-top: 18px; }
+.world-layout .conversation-actions button,
+.world-layout .workshop-panel button {
+  background: #ffffffbf;
+  border-color: #dce3ef;
+  border-radius: 9px;
+  box-shadow: 0 2px 4px #25375405;
+}
+.world-layout .conversation-actions .invited { background: #edf3ff; border-color: #b7cdf9; color: #2558c9; }
+.world-layout .continue-button { margin-top: 17px; }
+.world-layout .primary {
+  background: #2d63e5;
+  border-color: #2d63e5;
+  color: #fff;
+  border-radius: 9px;
+  box-shadow: 0 4px 11px rgba(45, 99, 229, .2), inset 0 1px 0 #ffffff22;
+}
+.world-layout button.primary:hover:not(:disabled) { background: #2053cf; border-color: #2053cf; color: #fff; }
+.world-layout button:focus-visible,
+.world-layout a:focus-visible,
+.world-layout summary:focus-visible,
+.world-layout [tabindex='-1']:focus-visible { outline: 3px solid #5785ef; outline-offset: 4px; }
+.world-layout .hud-tabs { background: #f5f7fccc; gap: 5px; padding: 9px 9px 0; }
+.world-layout .hud-tabs button { color: #5e6a80; font-weight: 500; }
+.world-layout .hud-tabs button[aria-pressed=true] { background: #e8effe; color: #255ad1; }
+.world-layout .hud-tabs span { color: #60718e; }
+.world-layout .decision-step { color: #536786; }
+.world-layout .decision h3 { letter-spacing: -.45px; line-height: 1.35; font-weight: 600; }
+.world-layout .decision .context { color: #5e6879; line-height: 1.65; margin: 14px 0 18px; }
+.world-layout .choice {
+  background: #ffffffc9;
+  border: 1px solid #e0e6f0;
+  border-radius: 10px;
+  padding: 13px;
+  box-shadow: 0 2px 5px #2c3d5c04;
+}
+.world-layout .choice strong { color: #263143; font-weight: 580; }
+.world-layout .choice span { color: #5b677a; margin-top: 6px; line-height: 1.55; }
+.world-layout .choice:hover:not(:disabled) { background: #eef4ff; border-color: #a0bdf5; }
+.world-layout .latest-response { background: #eaf0fe; border-left-color: #7f9fe8; color: #3d4f72; border-radius: 0 8px 8px 0; }
+.world-layout .scene-status { color: #52627d; border-radius: 20px; }
+.world-layout .journey-item { color: #4e5d74; }
+.world-layout .journey-number { border-color: #d7deeb; background: #ffffffb8; color: #586a84; }
+.world-layout .journey-item.active { color: #2558ca; }
+.world-layout .journey-item.active .journey-number { background: #2d63e5; border-color: #2d63e5; color: #fff; box-shadow: 0 3px 9px #2d63e52e; }
+.world-layout .journey-item.done .journey-number { background: #e4ecfc; color: #436bba; }
+.world-layout .person-chip { color: #485873; box-shadow: 0 5px 15px #25334f14, inset 0 1px 0 #ffffff; }
+.world-layout .person-chip[aria-pressed=true] { background: #2d63e5; color: #fff; border-color: #2d63e5; }
+.world-layout .person-chip:hover:not(:disabled) { border-color: #a0baf2; }
+.world-layout .person-chip[aria-pressed=true]:hover { background: #2053cf; }
+.world-layout .scene-bottom p { color: #53617a; }
+.world-layout .scene-controls button { color: #465774; }
+.world-layout .scene-controls button:hover:not(:disabled) { background: #ffffff; border-color: #c3d3f2; }
+.world-layout .workshop-panel { padding: 18px; border-radius: 15px; border-style: solid; }
+.world-layout .workshop-panel h3 { color: #2c3648; font-size: 14px; letter-spacing: -.2px; }
+.world-layout .workshop-copy > p:not(.eyebrow) { color: #5c687b; line-height: 1.65; }
+.world-layout .attendance span { color: #526582; background: #edf2fb; }
+.world-layout .dependency-list { color: #5b6880; }
+
+/* Scene labels are injected later; the body selector keeps this theme in control. */
+body.world-layout .map-label,
+body.world-layout .world-label {
+  background: rgba(255, 255, 255, .94);
+  border-color: rgba(255, 255, 255, .98);
+  box-shadow: 0 7px 21px #2639571c, 0 1px 4px #2639570a, inset 0 1px 0 #fff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #35425a;
+  font-family: var(--ui-font);
+  font-weight: 580;
+}
+body.world-layout .map-label small { color: #61708a; letter-spacing: .65px; }
+body.world-layout .map-label:after { border-color: #e8ecf4; }
+body.world-layout .map-label.playable { background: #2d63e5; border-color: #2d63e5; color: #fff; box-shadow: 0 7px 24px #2d63e530; }
+body.world-layout .map-label.playable small { color: #fff; }
+body.world-layout .map-label:hover { background: #edf3ff; border-color: #bccff7; }
+body.world-layout .map-label.playable:hover { background: #2053cf; }
+body.world-layout .world-label[aria-pressed=true] { background: #e6eeff; border-color: #91afea; color: #2456c9; }
+body.world-layout .world-label:hover { background: #edf3ff; border-color: #b8cdf6; }
+.world-layout .map-organisations button { background: #ffffffdf; border-color: #dde5f2; color: #35425a; box-shadow: 0 3px 10px #2a39520a; }
+.world-layout .map-organisations button:first-child { background: #eaf1ff; border-color: #acc6f7; }
+.world-layout .map-organisations small { color: #586c8e; }
+.world-layout.text-mode .people-strip { background: #f9fbffdb; border-color: #d6e0f0; box-shadow: var(--glass-shadow); }
+.world-layout .artefact, .world-layout .reviewer, .world-layout .library { background: #ffffffc9; border-color: #e3e8f1; box-shadow: 0 4px 16px #2b3c5606; }
+.world-layout .artefact-icon { background: #edf2fc; color: #6a80a9; }
+.world-layout .artefact .status { color: #68758b; }
+.world-layout .debrief { background: #eaf0fb; border-color: #d0dcf0; }
+.world-layout .debrief h2, .world-layout .metric .value { font-family: var(--ui-font); font-weight: 580; letter-spacing: -.8px; }
+.world-layout .metric { background: #ffffffc9; border-color: #dce5f4; }
+.world-layout .relationship-result { border-color: #d0dbed; }
+.world-layout .relationship-result p { color: #586985; }
+.world-layout .type b { color: #496a9e; }
+
+@supports not (backdrop-filter: blur(1px)) {
+  .world-layout .right-column, .world-layout .workshop-panel, .world-layout .person-chip,
+  .world-layout .scene-status, .world-layout .scene-controls button { background: #fbfcff; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .world-layout .right-column, .world-layout .workshop-panel, .world-layout .person-chip,
+  .world-layout .scene-status, .world-layout .scene-controls button,
+  body.world-layout .map-label, body.world-layout .world-label { background: #fbfcff; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  body.world-layout .map-label.playable, .world-layout .person-chip[aria-pressed=true] { background: #2d63e5; }
+}
+@media (max-width:1250px) and (min-width:901px) {
+  .world-layout .intro h1 { font-size: 31px; }
+}
+@media (max-width:620px) {
+  .world-layout .intro h1 { font-size: 30px; letter-spacing: -1.3px; margin: 11px 0 12px; }
+  .world-layout .scene-top h2 { font-size: 23px; letter-spacing: -.8px; }
+  .world-layout .right-column .card { padding: 18px; }
+  .world-layout[data-mode=map] .right-column .card { padding: 16px 18px; }
+  .world-layout .right-column h2 { font-size: 20px; }
+  .world-layout .quote { font-size: 15px; line-height: 1.55; }
+  .world-layout .conversation-header { margin-bottom: 13px; }
+  .world-layout .source { margin-top: 12px; }
+  .world-layout .insight { padding: 9px 10px; margin-top: 11px; }
+  .world-layout .conversation-actions { margin-top: 13px; }
+  .world-layout .workshop-panel { padding: 11px; }
+  .world-layout .workshop-panel h3 { font-size: 10px; }
+}

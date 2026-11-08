@@ -1,0 +1,27 @@
+/* Alex's expressions make the emotional journey readable before the labels are read. */
+.bp-dialog .bp-emotion-row{min-height:144px;background:#fffcf8;border-bottom-color:#eadfd5}
+.bp-dialog .bp-emotion-caption{padding:16px 12px;gap:8px;background:#fff8f0}
+.bp-dialog .bp-emotion-caption>span{font-size:12px;line-height:1.45;font-weight:750;color:#573f2c}
+.bp-dialog .bp-emotion-caption>small{font-size:9px;line-height:1.6;color:#8c7664;margin:0}
+.bp-dialog .bp-emotion-track{height:144px;background:linear-gradient(#fffdfa,#fff7ee)}
+.bp-dialog .bp-emotion-track>svg{inset:0;width:100%;height:144px}
+.bp-dialog .bp-emotion-stages button{min-height:144px;overflow:visible;cursor:pointer}
+.bp-emotion-avatar{position:absolute;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border:3px solid #fff;border-radius:50%;box-shadow:0 3px 12px #583d2720;display:block;background:#eee8e1}
+.bp-emotion-face{display:block;width:100%;height:100%;flex-shrink:0;background-image:url('./assets/alex-emotions.png');background-repeat:no-repeat;background-size:400% 200%;background-color:#eee8e1;border-radius:50%}
+.bp-dialog .bp-emotion-stages small{bottom:8px;left:6px;right:6px;white-space:normal;font-size:10px;font-weight:650;line-height:1.35;color:#775b44;min-height:14px}
+.bp-dialog .bp-emotion-stages button[aria-pressed=true]{background:#f7e8d759}
+.bp-dialog .bp-emotion-stages button[aria-pressed=true] .bp-emotion-avatar{border-color:#fff;outline:2px solid #e31c5f;outline-offset:2px;box-shadow:0 4px 16px #593e2730}
+.bp-dialog .bp-emotion-stages button[aria-pressed=true] small{color:#222;font-weight:800}
+.bp-dialog .bp-emotion-stages button:hover .bp-emotion-avatar{box-shadow:0 4px 16px #593e2740}
+.bp-dialog .bp-emotion-stages button:focus-visible{outline:2px solid #222;outline-offset:-4px;z-index:2}
+.bp-dialog .bp-stage-feeling{gap:14px;padding:14px;background:#fff8f0;border-radius:14px}
+.bp-dialog .bp-feeling-portrait{width:48px;height:48px;border:2px solid #fff;box-shadow:0 2px 8px #583d2712}
+.bp-dialog .bp-persona-hero .bp-emotion-face{width:90px;height:106px;border-radius:12px;background-size:400% 200%}
+@media(min-width:1600px){.bp-dialog .bp-persona-hero .bp-emotion-face{width:105px;height:122px}}
+@media(max-width:1100px) and (min-width:761px){.bp-dialog .bp-persona-hero .bp-emotion-face{width:76px;height:90px}}
+@media(max-width:760px){.bp-dialog .bp-emotion-caption>span{font-size:11px}.bp-dialog .bp-emotion-caption>small{font-size:9px}.bp-emotion-avatar{width:64px;height:64px}.bp-dialog .bp-emotion-stages small{font-size:11px}.bp-dialog .bp-persona-hero .bp-emotion-face{width:102px;height:120px}}
+/* Keep sprite cells square, including the larger resident portrait. */
+.bp-dialog .bp-persona-hero .bp-emotion-face{height:90px}
+@media(min-width:1600px){.bp-dialog .bp-persona-hero .bp-emotion-face{height:105px}}
+@media(max-width:1100px) and (min-width:761px){.bp-dialog .bp-persona-hero .bp-emotion-face{height:76px}}
+@media(max-width:760px){.bp-dialog .bp-persona-hero .bp-emotion-face{height:102px}}

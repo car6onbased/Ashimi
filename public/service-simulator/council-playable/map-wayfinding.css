@@ -1,0 +1,48 @@
+/* Place the starting instruction with the introduction, and distinguish places from tools. */
+body.world-layout[data-mode=map] .intro #world-hint{display:block;font-size:13px;line-height:1.6;margin:14px 0 0;color:#43564a;max-width:none}
+body.world-layout[data-mode=map] .entry-preview,body.world-layout[data-mode=map] .entry-scope{display:none}
+body.world-layout .world-stage{height:100svh;min-height:0}
+body.world-layout .scene-bottom,body.world-layout[data-mode=map] .scene-bottom,body.world-layout[data-mode=council] .scene-bottom{left:auto;right:24px;bottom:22px;transform:none;width:auto;max-width:calc(100% - 128px)}
+body.world-layout .scene-controls,body.world-layout[data-mode=council] .scene-controls{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:6px;padding:8px 10px;background:#153e35;color:#f4f0df;border:0;border-radius:16px;width:auto;box-shadow:0 5px 18px #102b2525}
+body.world-layout .scene-controls button{background:transparent;color:#f4f0df;border:0;border-radius:8px;min-width:40px;min-height:44px;padding:8px 10px;font-size:11px}
+body.world-layout .scene-controls button:hover,body.world-layout .scene-controls button[aria-pressed=true]{background:#32634c;color:#fff}
+.view-rotate,body.world-layout .scene-controls .town-zoom{position:static;transform:none;display:flex;align-items:center;gap:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:inherit}
+.view-control-label{font:500 10px/1.3 var(--ui-font);margin:0 4px;letter-spacing:.03em}
+body.world-layout .scene-controls .town-zoom button{width:38px;min-width:38px;min-height:44px;border:0;font-size:18px;background:none;color:inherit}
+body.world-layout[data-mode=map] #view-toggle{display:none}
+body.world-layout .scene-controls .town-motion{position:static;inset:auto;transform:none;border:0;border-radius:8px;box-shadow:none;background:transparent;color:#f4f0df;min-width:44px;min-height:44px;margin:0;padding:8px;font:600 17px/1 system-ui,sans-serif}
+body.world-layout .scene-controls .town-motion:hover{background:#32634c}
+body.world-layout[data-mode=council] .people-strip{bottom:calc(22px + var(--view-toolbar-height,64px) + 16px)}
+body.world-layout .map-label{border-radius:8px;padding:7px 10px;font-size:10px;min-height:44px;background:#fffdf4;color:#294538;border:1px solid #c5cdbd;box-shadow:0 2px 6px #183d3020;text-align:center}
+body.world-layout .map-label:not(.playable)::before{display:none}
+body.world-layout .map-label:not(.playable) small{display:block;font:400 8px/1.2 var(--ui-font);letter-spacing:0;text-transform:none;color:#68756a;margin-top:3px}
+body.world-layout .map-label.playable{min-width:154px;max-width:164px;border-radius:10px;background:#153e35;border:2px solid #f4f0df;padding:10px 12px;color:#f4f0df;box-shadow:0 5px 14px #183d3030}
+body.world-layout .map-label.playable strong{display:block;font:750 16px/1.2 var(--ui-font);letter-spacing:-.3px}
+body.world-layout .map-label.playable small{display:block;font:500 9px/1.3 var(--ui-font);letter-spacing:0;text-transform:none;color:#e1e9ce;margin-top:5px}
+body.world-layout .map-label.playable:hover{background:#245848;color:#fff}
+body.world-layout .map-label:after{border-color:#c5cdbd}
+body.world-layout .map-label.playable:after{border-color:#f4f0df}
+@media(max-width:620px){
+ body.world-layout[data-mode=map] .intro{top:84px;left:12px;width:calc(100% - 24px);padding:14px 16px}
+ body.world-layout[data-mode=map] .intro h1{font-size:22px}
+ body.world-layout[data-mode=map] .intro #world-hint{font-size:11px;line-height:1.4;margin-top:8px}
+ body.world-layout .scene-bottom,body.world-layout[data-mode=map] .scene-bottom,body.world-layout[data-mode=council] .scene-bottom{right:12px;left:12px;bottom:12px;max-width:none;width:auto;transform:none}
+ body.world-layout .scene-controls{padding:5px 6px;gap:0;border-radius:14px}
+ body.world-layout .scene-controls button{padding:7px;min-width:34px;font-size:10px}
+ body.world-layout .scene-controls .town-zoom button{width:34px;min-width:34px}
+ body.world-layout .view-control-label{font-size:9px;margin:0 3px}
+ body.world-layout[data-mode=council] .scene-bottom{bottom:12px}
+ body.world-layout[data-mode=council] .people-strip{bottom:calc(12px + var(--view-toolbar-height,100px) + 12px)}
+ body.world-layout[data-mode=council] .right-column,body.world-layout[data-mode=council][data-discovery-intake=true] .right-column{bottom:calc(12px + var(--view-toolbar-height,100px) + 12px + var(--staff-bar-height,112px) + 12px)}
+ body.world-layout[data-mode=map] .right-column{bottom:calc(12px + var(--view-toolbar-height,60px) + 20px)}
+ body.world-layout[data-mode=map] .right-column{top:auto;max-height:310px}
+ body.world-layout[data-mode=map] .right-column .card{padding:14px 16px}
+ body.world-layout[data-mode=map] .entry-intro{display:none}
+ body.world-layout[data-mode=map] .right-column h2{font-size:20px;margin-bottom:10px}
+ body.world-layout[data-mode=map] .entry-picker{margin:10px 0;gap:6px}
+ body.world-layout[data-mode=map] .entry-picker button{min-height:54px;padding:8px}
+ body.world-layout[data-mode=map] .entry-picker button[aria-pressed=true]{padding:7px}
+ body.world-layout .map-label.playable{min-width:138px;max-width:148px;padding:8px 9px}
+ body.world-layout .map-label.playable strong{font-size:14px}
+ body.world-layout .map-label.playable small{font-size:8px}
+}

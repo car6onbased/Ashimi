@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed">
+  <meta name="description" content="Service design for local government, shaped around the people who use public services.">
+  <title>Council services, shaped around people | Ashimi Adefesobi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f2ed;
+      --ink: #22221f;
+      --muted: #6e6c66;
+      --line: #d9d6cf;
+      --rust: #a64326;
+      --display: "Archivo Black", Impact, sans-serif;
+      --body: "DM Sans", "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .topbar { height: 68px; padding: 0 4.3vw; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 5; }
+    .brand { font-family: var(--display); font-size: 15px; letter-spacing: -.04em; text-decoration: none; }
+    .nav { display: flex; align-items: center; gap: clamp(20px, 4vw, 58px); }
+    .nav a { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; }
+    .nav .contact { color: var(--rust); }
+    .hero { min-height: min(760px, calc(100svh - 68px)); min-height: clamp(610px, calc(100svh - 68px), 820px); position: relative; overflow: hidden; padding: 2px 4.3vw 36px; isolation: isolate; }
+    .hero-kicker { display: flex; align-items: center; gap: 10px; position: relative; z-index: 2; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .hero-kicker::before { content: ""; width: 25px; height: 1px; background: var(--rust); }
+    .wordmark { position: absolute; z-index: -1; top: 37px; left: 2.1vw; width: 96%; color: var(--ink); font-family: var(--display); font-size: clamp(150px, 22vw, 322px); line-height: .82; letter-spacing: -.075em; white-space: nowrap; transform-origin: left center; animation: wordmark-in 1s cubic-bezier(.2,.7,.2,1) both; }
+    .building { position: absolute; z-index: 0; width: min(72vw, 1100px); height: auto; right: -2.6vw; bottom: 42px; filter: drop-shadow(0 16px 16px rgba(34,34,31,.08)); animation: building-in 1.25s .12s cubic-bezier(.18,.72,.24,1) both; will-change: transform; }
+    .hero-copy { position: absolute; z-index: 2; left: 4.3vw; bottom: 65px; width: min(34vw, 400px); }
+    .hero-copy h1 { max-width: 390px; margin: 0 0 13px; font-family: var(--display); font-size: clamp(36px, 4vw, 58px); line-height: .98; letter-spacing: -.055em; }
+    .hero-copy p { max-width: 330px; margin: 0; color: #45443f; font-size: 15px; line-height: 1.55; }
+    .hero-index { position: absolute; z-index: 2; bottom: 51px; right: 4.3vw; display: flex; align-items: center; gap: 11px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .hero-index::before { content: ""; width: 36px; height: 1px; background: var(--rust); }
+    .scroll-cue { position: absolute; z-index: 2; bottom: 18px; right: 4.3vw; color: var(--muted); font-size: 9px; letter-spacing: .11em; text-transform: uppercase; }
+    .intro { border-top: 1px solid var(--line); padding: 28px 4.3vw 34px; display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 32px; }
+    .intro-label { margin: 0 0 10px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .intro h2 { max-width: 580px; margin: 0; font-family: var(--display); font-size: clamp(26px, 3.2vw, 43px); line-height: 1.02; letter-spacing: -.055em; }
+    .intro-copy { max-width: 440px; margin: 0; color: #55534e; font-size: 14px; line-height: 1.65; }
+    .case-link { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 4px; border-bottom: 1px solid var(--rust); color: var(--rust); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+    .case-link span { font-size: 17px; transition: transform .2s ease; }
+    .case-link:hover span { transform: translateX(4px); }
+    .method { padding: 72px 4.3vw 78px; background: #e9e5dc; border-top: 1px solid var(--line); }
+    .method-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); align-items: end; gap: 40px; }
+    .method-head h2 { max-width: 750px; margin: 0; font-family: var(--display); font-size: clamp(38px, 5.5vw, 82px); line-height: .98; letter-spacing: -.06em; }
+    .method-head > p { max-width: 410px; margin: 0 0 3px; color: #55534e; font-size: 15px; line-height: 1.65; }
+    .method-map { margin-top: 50px; overflow-x: auto; }
+    .method-map svg { display: block; width: 100%; min-width: 700px; height: auto; }
+    .method-map .path { fill: none; stroke: var(--rust); stroke-width: 2.6; stroke-linejoin: round; }
+    .method-map .point { fill: var(--rust); }
+    .method-map .checkpoint { font: 600 13px var(--body); fill: var(--muted); }
+    .method-map .space { font: 700 12px var(--body); fill: var(--muted); letter-spacing: .16em; }
+    .method-map .phase { font: 700 18px var(--body); fill: var(--ink); }
+    .artefact-story { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 40px; margin: 24px 0 45px; padding: 35px; border: 1px solid #c9c4b9; background: var(--paper); }
+    .artefact-story h3 { max-width: 480px; margin: 0 0 18px; font-family: var(--display); font-size: clamp(29px, 3.2vw, 44px); line-height: 1.02; letter-spacing: -.055em; }
+    .artefact-story p { max-width: 550px; color: #55534e; font-size: 14px; line-height: 1.65; }
+    .artefact-story .story-question { margin: 0 0 13px; color: var(--rust); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .artefact-story .story-decision { margin: 20px 0 0; padding-left: 14px; border-left: 2px solid var(--rust); color: var(--ink); font-weight: 600; }
+    .artefact-view { align-self: center; }
+    .artefact-view h4 { margin: 0 0 13px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .artefact-view table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.5; }
+    .artefact-view th { padding: 0 12px 11px 0; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    .artefact-view td { padding: 11px 12px 11px 0; border-top: 1px solid var(--line); }
+    .artefact-view .reading-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .phase-list { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #c9c4b9; }
+    .phase-card { padding: 26px 23px 0 0; }
+    .phase-card + .phase-card { border-left: 1px solid #c9c4b9; padding-left: 23px; }
+    .phase-card .number { display: block; margin-bottom: 16px; color: var(--rust); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+    .phase-card h3 { margin: 0 0 10px; font-family: var(--display); font-size: clamp(19px, 2vw, 27px); letter-spacing: -.05em; }
+    .phase-card p { min-height: 80px; margin: 0 0 17px; color: #55534e; font-size: 13px; line-height: 1.6; }
+    .phase-card a { color: var(--rust); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .phase-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .method-source { margin: 28px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .method-source a { text-underline-offset: 3px; }
+    .council-line { display: flex; justify-content: space-between; gap: 20px; padding: 18px 4.3vw 23px; border-top: 1px solid var(--line); color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .council-line strong { color: var(--ink); font-weight: 700; }
+    .visual-note { position: absolute; z-index: 2; right: 4.3vw; top: 48%; color: rgba(34,34,31,.63); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; writing-mode: vertical-rl; }
+    @keyframes wordmark-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes building-in { from { opacity: 0; transform: translate(28px, 20px) scale(.985); } to { opacity: 1; transform: translate(0, 0) scale(1); } }
+    @media (max-width: 760px) {
+      .topbar { height: 60px; padding: 0 21px; }
+      .brand { font-size: 13px; }
+      .nav { gap: 16px; }
+      .nav a { font-size: 9px; }
+      .nav a:nth-child(2) { display: none; }
+      .hero { min-height: 650px; min-height: calc(100svh - 60px); max-height: 820px; padding: 8px 21px 26px; }
+      .hero-kicker { font-size: 8px; }
+      .wordmark { top: 73px; left: 1vw; font-size: 24vw; letter-spacing: -.08em; }
+      .building { width: 128vw; max-width: none; right: -35vw; bottom: 188px; }
+      .hero-copy { left: 21px; bottom: 44px; width: min(70vw, 360px); }
+      .hero-copy h1 { font-size: clamp(35px, 10vw, 51px); }
+      .hero-copy p { font-size: 13px; }
+      .hero-index { bottom: 24px; right: 21px; font-size: 8px; }
+      .scroll-cue { display: none; }
+      .visual-note { right: 20px; top: 43%; font-size: 8px; }
+      .intro { grid-template-columns: 1fr; gap: 17px; padding: 24px 21px 30px; }
+      .intro h2 { font-size: 34px; }
+      .intro-copy { font-size: 13px; }
+      .case-link { justify-self: start; }
+      .method { padding: 49px 21px 54px; }
+      .method-head { grid-template-columns: 1fr; gap: 19px; }
+      .method-head h2 { font-size: clamp(38px, 10vw, 54px); }
+      .method-head > p { font-size: 13px; }
+      .method-map { margin-top: 28px; }
+      .artefact-story { grid-template-columns: 1fr; gap: 16px; margin: 16px 0 29px; padding: 23px; }
+      .artefact-story h3 { font-size: 33px; }
+      .artefact-story p { font-size: 13px; }
+      .phase-list { grid-template-columns: 1fr 1fr; }
+      .phase-card { padding: 22px 14px 25px 0; border-bottom: 1px solid #c9c4b9; }
+      .phase-card + .phase-card { padding-left: 14px; }
+      .phase-card:nth-child(3) { border-left: 0; padding-left: 0; }
+      .phase-card:nth-child(4) { border-left: 1px solid #c9c4b9; }
+      .phase-card p { min-height: 0; font-size: 12px; }
+      .council-line { padding: 16px 21px 20px; flex-wrap: wrap; font-size: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+<link rel="stylesheet" href="/service-simulator/council-playable/portfolio-nav.css?v=menu-align-20261107">
+<link rel="stylesheet" href="/shared/case-study.css?v=menu-type-20261106">
+</head>
+<body class="case-study-page" data-case="council">
+  <header class="portfolio-rail" aria-label="Portfolio navigation">
+    <div class="portfolio-reading-fill" aria-hidden="true"></div>
+    <a class="portfolio-brand" href="/" aria-label="Back to the service world">a.</a>
+    <button id="portfolio-menu-toggle" type="button" aria-haspopup="dialog" aria-controls="portfolio-menu" aria-expanded="false"><span aria-hidden="true">☰</span><span>Menu</span></button>
+    <span class="portfolio-reading" aria-label="Page reading progress">Reading <span id="portfolio-reading-value">0%</span></span>
+  </header>
+  <dialog id="portfolio-menu" aria-labelledby="portfolio-menu-title">
+    <div class="portfolio-menu-top"><span id="portfolio-menu-title">ASHIMI ADEFESOBI</span><button id="portfolio-menu-close" type="button" aria-label="Close menu">×</button></div>
+    <nav class="portfolio-menu-links" aria-label="Explore the portfolio">
+      <button type="button" data-nav-view="work" aria-expanded="true">Work <span aria-hidden="true">↗</span></button>
+      <button type="button" data-nav-view="about" aria-expanded="false">About me</button>
+      <button type="button" data-nav-view="approach" aria-expanded="false">My approach</button>
+      <a href="mailto:ashimi.design@gmail.com?subject=CV%20request">CV <span class="portfolio-nav-note">on request</span></a>
+      <a href="mailto:ashimi.design@gmail.com">Contact</a>
+    </nav>
+    <section id="portfolio-nav-work" class="portfolio-nav-detail" aria-label="Selected work">
+      <a href="/takumi.html">Takumi <span>Service design · platform</span></a>
+      <a href="/Richmond_Case_Study.html">Richmond <span>Council services</span></a>
+      <a href="/council-sites.html">Council websites <span>Selected work</span></a>
+      <a href="/">Explore the service world <span aria-hidden="true">↗</span></a>
+    </section>
+    <section id="portfolio-nav-about" class="portfolio-nav-detail" aria-label="About Ash" hidden><h2>The designer in this world.</h2><p>I’m Ashimi Adefesobi, a Senior / Lead Service Designer based in London. My work spans public services, financial services, higher education and commercial organisations.</p><p>This world is a way into my practice. The case studies show the work behind it.</p></section>
+    <section id="portfolio-nav-approach" class="portfolio-nav-detail" aria-label="How Ash works" hidden><h2>Understand people. Make the service visible.</h2><p>I look across the experience and the organisation delivering it: people, policy, processes, technology and the handoffs between them.</p><p>I bring those perspectives together, test ideas and use the evidence to decide what should change.</p></section>
+    <div class="portfolio-menu-bottom"><a href="/" class="case-world-link">← Back to the world</a><span>SERVICE DESIGNER · LONDON</span></div>
+  </dialog>
+
+<div class="case-page-shell"><header class="case-reading-header"><a class="case-back" href="/">← Back to the world</a><span>SELECTED WORK · COUNCIL SERVICES</span></header><nav class="case-chapters" aria-label="Case study chapters"><a href="#approach">Approach</a><a href="#method">Method</a><a href="/Richmond_Case_Study.html">Richmond case study ↗</a></nav><div class="case-content">
+  
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-kicker">Public service design · London</p>
+      <div class="wordmark" aria-hidden="true">CIVIC</div>
+      <img class="building" src="council-civic-building.png" alt="Illustrative view of a London borough civic building, created as a visual concept for this page">
+      <p class="visual-note">Illustrative civic architecture</p>
+      <div class="hero-copy">
+        <h1 id="hero-title">Services shaped around people.</h1>
+        <p>Making council services easier to find, understand and use, from the resident’s first question to the work happening behind the scenes.</p>
+      </div>
+      <div class="hero-index">Resident first · System aware</div>
+      <a class="scroll-cue" href="#approach">Explore the work ↓</a>
+    </section>
+
+    <section class="intro" id="approach" aria-labelledby="approach-title">
+      <div>
+        <p class="intro-label">Council services, seen from the outside in</p>
+        <h2 id="approach-title">A clearer route through local government.</h2>
+      </div>
+      <p class="intro-copy">At Richmond, resident research and service mapping helped shift the focus from departmental publishing to the tasks people came to do. The work joined up content, access and the teams behind the service.</p>
+      <a class="case-link" href="Richmond_Case_Study.html">Read the Richmond case study <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="method" id="method" aria-labelledby="method-title">
+      <div class="method-head">
+        <div>
+          <p class="intro-label">The Double Diamond · Richmond Council</p>
+          <h2 id="method-title">The brief changed before the site did.</h2>
+        </div>
+        <p>The first diamond tested why people were calling and changed the brief. The second shaped a service around resident tasks, then put the changes into use. Each phase below links to the work behind it.</p>
+      </div>
+      <div class="method-map" aria-hidden="true">
+        <svg viewBox="0 0 1000 270" xmlns="http://www.w3.org/2000/svg">
+          <text class="space" x="250" y="24" text-anchor="middle">UNDERSTAND THE PROBLEM</text>
+          <text class="space" x="750" y="24" text-anchor="middle">SHAPE THE RESPONSE</text>
+          <path class="path" d="M18 134 L250 45 L500 134 L250 223 Z M500 134 L750 45 L982 134 L750 223 Z"/>
+          <circle class="point" cx="18" cy="134" r="7"/>
+          <circle class="point" cx="500" cy="134" r="7"/>
+          <circle class="point" cx="982" cy="134" r="7"/>
+          <text class="checkpoint" x="500" y="113" text-anchor="middle">Reframed brief</text>
+          <text class="phase" x="125" y="260" text-anchor="middle">Discover</text>
+          <text class="phase" x="375" y="260" text-anchor="middle">Define</text>
+          <text class="phase" x="625" y="260" text-anchor="middle">Develop</text>
+          <text class="phase" x="875" y="260" text-anchor="middle">Deliver</text>
+        </svg>
+      </div>
+      <div class="artefact-story" aria-labelledby="artefact-story-title">
+        <div>
+          <p class="story-question">A worked example · Discover to Define</p>
+          <h3 id="artefact-story-title">Why were residents still phoning?</h3>
+          <p>To investigate the calls, I compared the main reasons people contacted Customer Services with the pages meant to help them online. The same services appeared in both places. Putting them side by side made the connection visible to people who could change the brief.</p>
+          <p class="story-decision">The decision: make a case for fixing those journeys, then redesign around the tasks residents came to do.</p>
+        </div>
+        <div class="artefact-view">
+          <h4>Call reasons beside the pages intended to answer them</h4>
+          <table>
+            <thead><tr><th scope="col">People called about</th><th scope="col">The page they needed</th></tr></thead>
+            <tbody>
+              <tr><td>Bin collection days</td><td>Collection lookup</td></tr>
+              <tr><td>Council tax queries</td><td>Council tax account</td></tr>
+              <tr><td>Parking permits and fines</td><td>Parking services</td></tr>
+            </tbody>
+          </table>
+          <p class="reading-note">How to read this: a repeated match points to a journey worth investigating. This table reconstructs the comparison described in the case study; original figures have not been retained.</p>
+        </div>
+      </div>
+      <div class="phase-list">
+        <article class="phase-card"><span class="number">01 / OPEN UP</span><h3>Discover</h3><p>With Customer Services under strain, I compared the reasons people phoned with the pages for those tasks. That gave the team a service problem to investigate.</p><a href="Richmond_Case_Study.html#discover">See the evidence →</a></article>
+        <article class="phase-card"><span class="number">02 / FOCUS</span><h3>Define</h3><p>To put a decision in front of budget holders, I used a short cost case showing how avoidable contact consumed staff time and money.</p><a href="Richmond_Case_Study.html#define">See the decision →</a></article>
+        <article class="phase-card"><span class="number">03 / EXPLORE</span><h3>Develop</h3><p>To show departments a clearer route for residents, I organised the site around tasks and made that change visible in its structure.</p><a href="Richmond_Case_Study.html#develop">See the design →</a></article>
+        <article class="phase-card"><span class="number">04 / PUT TO WORK</span><h3>Deliver</h3><p>To help teams keep the approach consistent, I handed over shared responsive patterns. Customer Services reported fewer bin lookup calls.</p><a href="Richmond_Case_Study.html#deliver">See the outcome →</a></article>
+      </div>
+      <p class="method-source">Framework: <a href="https://www.designcouncil.org.uk/resources/the-double-diamond/">Design Council’s Double Diamond</a>. The project detail comes from the <a href="Richmond_Case_Study.html">Richmond case study</a>.</p>
+    </section>
+
+    <div class="council-line" aria-label="Council experience">
+      <span><strong>Richmond upon Thames</strong> · Service and UX design</span>
+      <span><strong>Hounslow</strong> · Web, UX and service design</span>
+      <span>2011–2015</span>
+    </div>
+  </main>
+  <script>
+    const building = document.querySelector('.building');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (building && !reducedMotion.matches && window.matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('pointermove', (event) => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 7;
+        const y = (event.clientY / window.innerHeight - 0.5) * 5;
+        building.style.translate = `${x}px ${y}px`;
+      }, { passive: true });
+    }
+  </script>
+</div><footer class="case-world-footer"><a href="/">← Return to the service world</a><a href="mailto:ashimi.design@gmail.com">Talk to Ash ↗</a></footer></div>
+<script src="/shared/case-nav.js?v=shared-20261106" defer></script>
+</body>
+</html>
