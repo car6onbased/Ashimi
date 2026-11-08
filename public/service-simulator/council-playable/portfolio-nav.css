@@ -51,4 +51,5 @@ html.portfolio-menu-open{overflow:hidden}
 }
 /* Centre the people bar in the usable space, from 96px to 32px off the right edge. */
 @media(min-width:621px){body.world-layout[data-mode=council] .people-strip{left:calc(50% + 32px);right:auto;transform:translateX(-50%);width:min(1080px,calc(100% - 128px));box-sizing:border-box}}
-#portfolio-menu .portfolio-beta { display: inline-block; width: fit-content; margin: 12px 0 0; padding: 4px 8px; border: 1px solid #f4f0df55; border-radius: 7px; color: #f4f0df; font: 650 11px/1.4 Manrope,system-ui,sans-serif; letter-spacing: .03em; }
+#portfolio-menu .portfolio-menu-identity { display: grid; justify-items: start; gap: 7px; }
+#portfolio-menu .portfolio-beta { display: inline-block; width: fit-content; margin: 0; padding: 4px 8px; border: 1px solid #f4f0df55; border-radius: 7px; color: #f4f0df; font: 650 11px/1.4 Manrope,system-ui,sans-serif; letter-spacing: .03em; }

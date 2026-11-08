@@ -20,9 +20,10 @@ for f in out.rglob("*"):
 for page in out.rglob("*.html"):
     html = page.read_text()
     if 'id="portfolio-menu"' in html:
-        before, sep, after = html.partition('id="portfolio-menu"')
-        close = after.index("</dialog>")
-        html = before + sep + after[:close] + '<p class="portfolio-beta">Portfolio beta · v' + version + '</p>\n  ' + after[close:]
+        label = '<span class="portfolio-beta">Portfolio beta · v' + version + '</span>'
+        html, count = re.subn(r'(<span id="portfolio-menu-title">[^<]+</span>)', r'<div class="portfolio-menu-identity">\1' + label + '</div>', html, count=1)
+        if count != 1:
+            raise ValueError(f"Could not place the release label in {page}")
         page.write_text(html)
 deep = (out / sim / "index.html").read_text()
 (out / "index.html").write_text(deep.replace("<head>", '<head>\n  <base href="/' + sim + '/">', 1))
