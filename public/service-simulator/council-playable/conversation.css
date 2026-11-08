@@ -1,0 +1,20 @@
+.world-layout #conversation .question-section { margin-top: .75rem; }
+.world-layout #conversation .ask-question { align-items: center; justify-content: space-between; padding: 10px 12px; }
+.world-layout #conversation .ask-question:hover { border-color: #235346; background: #edf2e9; }
+.action-icon { display: inline-block; flex: 0 0 auto; width: 20px; height: 20px; }
+.question-action { display: inline-flex; color: #235346; }
+.conversation-questions > summary, .past-answers > summary { cursor: pointer; color: #153e35; font-weight: 750; min-height: 44px; padding-block: 11px; }
+.conversation-questions summary small, .past-answers summary small { margin-inline-start: .25em; color: #53675c; }
+.world-layout #conversation .asked-question { margin: 0 0 8px; color: #53675c; font: 650 12px/1.45 var(--ui-font); }
+.asked-question span { font-weight: 800; }
+.world-layout #conversation .latest-answer blockquote { margin: 0; font: 550 clamp(15px, 1.6vw, 18px)/1.55 var(--ui-font); }
+.conversation-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; border-top: 1px solid #dce4d7; padding-top: 8px; margin-top: 10px; }
+.world-layout #conversation .conversation-tool, .conversation-attachment, .scenario-launch { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-width: 44px; min-height: 44px; padding: 6px 9px; margin: 0; border: 1px solid #c7d6c5; border-radius: 10px; background: #f7f8f2; color: #153e35; font: 750 12px/1.4 var(--ui-font); text-decoration: none; }
+.world-layout #conversation .conversation-tool:hover, .world-layout #conversation .conversation-tool[aria-expanded=true], .conversation-attachment:hover, .scenario-launch:hover { background: #e5efdf; }
+.conversation-attachment { margin-top: 10px; }
+.scenario-launch { margin: 8px 0; }
+.world-layout #conversation .meeting-actions[hidden] { display: none; }
+.world-layout #conversation .meeting-actions { margin-top: 8px; }
+.world-layout #conversation .meeting-actions p { margin: 6px 0; }
+#mobile-conversation-content #conversation .conversation-tools #open-brief,
+#mobile-conversation-content #conversation #conversation-workshop #go-decision { display: inline-flex; align-items: center; min-height: 44px; }

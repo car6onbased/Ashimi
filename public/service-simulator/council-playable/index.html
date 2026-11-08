@@ -18,9 +18,10 @@
   <link rel="stylesheet" href="./case-history.css?v=contact-story-20261105-r3">
   <link rel="stylesheet" href="./operating-view.css?v=operating-20261105-r4">
   <link rel="stylesheet" href="./entry-points.css?v=black-actions-20261106">
-  <link rel="stylesheet" href="./portfolio-nav.css?v=menu-align-20261107">
-  <link rel="stylesheet" href="./map-wayfinding.css?v=unified-view-20261106">
-  <link rel="stylesheet" href="./mobile-world-sheet.css?v=conversation-scroll-20261107">
+  <link rel="stylesheet" href="./portfolio-nav.css?v=0.1.0">
+  <link rel="stylesheet" href="./map-wayfinding.css?v=0.1.0">
+  <link rel="stylesheet" href="./mobile-world-sheet.css?v=0.1.0">
+  <link rel="stylesheet" href="./conversation.css?v=0.1.0">
   <script>if(new URLSearchParams(location.search).get('theme')==='map-v1')document.querySelector('#panel-theme').remove();</script>
 </head>
 <body class="world-layout" data-mode="map" data-panel="people">
@@ -37,12 +38,16 @@
       <button type="button" data-nav-view="work" aria-expanded="true">Work <span aria-hidden="true">↗</span></button>
       <button type="button" data-nav-view="about" aria-expanded="false">About me</button>
       <button type="button" data-nav-view="approach" aria-expanded="false">My approach</button>
+      <a href="/questions/">FAQs &amp; interviews</a>
+      <a href="/scenarios/">Scenarios</a>
       <a href="mailto:ashimi.design@gmail.com?subject=CV%20request">CV <span class="portfolio-nav-note">on request</span></a>
       <a href="mailto:ashimi.design@gmail.com">Contact</a>
     </nav>
     <section id="portfolio-nav-work" class="portfolio-nav-detail" aria-label="Selected work">
       <a href="/takumi.html">Takumi <span>Service design · platform</span></a>
       <a href="/Richmond_Case_Study.html">Richmond <span>Council services</span></a>
+      <a href="/work/apprenticeships/">Apprenticeships <span>Department for Education</span></a>
+      <a href="/work/recruitment/">Recruitment operations <span>Pertemps</span></a>
       <a href="/council-sites.html">Council websites <span>Selected work</span></a>
       <button type="button" id="portfolio-return-world">Explore the service world <span aria-hidden="true">↗</span></button>
     </section>
@@ -52,7 +57,7 @@
   </dialog>
   <main>
     <section id="world-stage" class="world-stage" aria-label="Explore the service-design world">
-      <div id="world" class="world" aria-label="A map of eleven fictional organisation types. Council housing repairs is playable; the other scenarios are planned."><p id="world-loading" class="world-loading">Preparing the neighbourhood…</p></div>
+      <div id="world" class="world" aria-label="A map of eleven fictional organisation types. Council housing repairs, banking and apprenticeships are playable."><p id="world-loading" class="world-loading">Preparing the neighbourhood…</p></div>
       <header class="masthead">
         <a class="identity" href="#world-stage"><span class="identity-mark" aria-hidden="true">a.</span><span>ASHIMI<span class="identity-caption">INSIDE THE SERVICE</span></span></a>
         <nav aria-label="Portfolio navigation"><a href="#evidence-title">Service workspace <span aria-hidden="true">↓</span></a><a href="/portfolio.html" target="_blank" rel="noopener">Previous portfolio <span aria-hidden="true">↗</span></a><button id="restart" class="text-button">Start again</button></nav>
@@ -99,7 +104,7 @@
             <p class="eyebrow"><span class="small-dot"></span> A WORLD OF SERVICES</p>
             <h1 id="page-title">Every service starts with people.</h1>
             <p id="world-hint">Start with the council’s housing-repairs service. The other buildings show where this world will grow.</p>
-            <span class="map-availability"><span class="small-dot"></span>Council: 4 starting points · 10 sectors planned</span>
+            <span class="map-availability"><span class="small-dot"></span>Three playable services</span>
           </section>
           <div id="map-organisations" class="map-organisations" aria-label="Organisation map, textual alternative"></div>
           <div class="world-conversation-contacts">
@@ -139,6 +144,6 @@
   </main>
   <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
   <noscript><p class="noscript">This playable prototype needs JavaScript. The fictional brief: a council repair is complete, but contractor confirmation does not reach the adviser and nobody owns the resident update. Investigate the information and responsibility gaps separately. <a href="/portfolio.html">Read the previous portfolio.</a></p></noscript>
-  <script type="module" src="./app.js?v=conversation-scroll-20261107"></script>
+  <script type="module" src="./app.js?v=0.1.0"></script>
 </body>
 </html>

@@ -68,7 +68,7 @@ export function initMobileWorldSheet({onSpeak, onDecision}) {
     progress.setAttribute('aria-label', phone && caseActive ? 'Decision journey' : 'Your progress');
     moveDetails(floating ? caseTop : null);
     if (!floating) {
-      for (const disclosure of dialogue.querySelectorAll('.conversation-questions, .conversation-extras')) {
+      for (const disclosure of dialogue.querySelectorAll('.conversation-questions')) {
         disclosure.open = true;
       }
     }

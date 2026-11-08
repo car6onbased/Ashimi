@@ -40,11 +40,11 @@ export function pathForWalk(curve,lane){
 
 export const townOrganisations = [
     {id:'council',name:'Council',short:'Council',x:-2.1,z:-1.8,playable:true},
-    {id:'bank',name:'Banking',short:'Bank',x:-21,z:0,kind:'bank',colour:0xe7d8b8},
+    {id:'bank',shortCase:true,name:'Banking',short:'Bank',x:-21,z:0,kind:'bank',colour:0xe7d8b8},
     {id:'consular',name:'International government',short:'Consular',x:-25,z:-19,kind:'consular',colour:0xd9d8bf},
     {id:'environment',name:'Environment & rural',short:'Environment',x:-7,z:-21,kind:'environment',colour:0x9eb49b},
     {id:'health',name:'Health',short:'Health',x:13,z:-21,kind:'health',colour:0xf0e6d2},
-    {id:'apprenticeships',name:'Apprenticeships',short:'Apprenticeships',x:24,z:-4,kind:'apprenticeships',colour:0xd9b18d},
+    {id:'apprenticeships',shortCase:true,name:'Apprenticeships',short:'Apprenticeships',x:24,z:-4,kind:'apprenticeships',colour:0xd9b18d},
     {id:'education',name:'Teaching & education',short:'Education',x:20,z:17,kind:'education',colour:0xd5b69a},
     {id:'restaurant',name:'Restaurant',short:'Restaurant',x:-3,z:22,kind:'restaurant',colour:0xe7bd92},
     {id:'ecommerce',name:'E-commerce',short:'E-commerce',x:-18,z:21,kind:'ecommerce',colour:0xe3d9c7},

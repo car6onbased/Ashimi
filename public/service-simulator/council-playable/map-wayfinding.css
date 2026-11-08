@@ -46,3 +46,6 @@ body.world-layout .map-label.playable:after{border-color:#f4f0df}
  body.world-layout .map-label.playable strong{font-size:14px}
  body.world-layout .map-label.playable small{font-size:8px}
 }
+body.world-layout .map-label.short-case { background: #153e35; border-color: #f4f0df; color: #f4f0df; }
+body.world-layout .map-label.short-case small { color: #e1e9ce; }
+body.world-layout .map-label.short-case:hover { background: #245848; }

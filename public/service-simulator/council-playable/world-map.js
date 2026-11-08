@@ -1,5 +1,5 @@
 import {TrafficEngine,overlap} from './traffic-engine.js?v=traffic-safety-20261105';
-import {roadPoints,roadCurve,circulatingRoute,pathForCurve,pathForWalk,buildingObstacles,houseSites,townOrganisations} from './traffic-layout.js?v=traffic-safety-20261105';
+import {roadPoints,roadCurve,circulatingRoute,pathForCurve,pathForWalk,buildingObstacles,houseSites,townOrganisations} from './traffic-layout.js?v=0.1.0';
 import * as THREE from '../../council-interactive/three.module.js';
 
 // A separate, locally rendered miniature. No network assets or previous prototypes are changed.
@@ -13,7 +13,7 @@ export async function createWorld(host, { onSelect = () => {}, onEnter = () => {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = .96;
   renderer.setClearColor(0xe7eee5, 0);
-  renderer.domElement.setAttribute('aria-label', 'Explorable miniature service-design district. Council is playable; ten other organisation buildings are planned. Use the labelled destinations and view controls.');
+  renderer.domElement.setAttribute('aria-label', 'Explorable miniature service-design district. Council housing repairs, banking and apprenticeships are playable. Use the labelled destinations and view controls.');
   renderer.domElement.setAttribute('role', 'img');
   renderer.domElement.style.cssText = 'display:block;width:100%;height:100%;touch-action:pan-y pinch-zoom;';
   host.append(renderer.domElement);
@@ -474,7 +474,7 @@ export async function createWorld(host, { onSelect = () => {}, onEnter = () => {
   const mapOverlay=document.createElement('div');mapOverlay.className='map-label-layer';mapOverlay.style.cssText='position:absolute;inset:0;pointer-events:none;overflow:hidden;';host.append(mapOverlay);
   const mapStyle=document.createElement('style');mapStyle.textContent=`.map-label{position:absolute;transform:translate(-50%,-100%);border:1px solid #b6c8aa;background:#fafceded;color:#294b39;border-radius:11px;padding:7px 11px;min-height:44px;max-width:142px;box-shadow:0 5px 16px #35573518;pointer-events:auto;cursor:pointer;font:600 11px/1.12 system-ui,sans-serif;text-align:left;white-space:normal}.map-label small{display:block;font-size:8px;line-height:1.3;letter-spacing:.8px;text-transform:uppercase;font-weight:500;color:#687d62;margin-top:4px}.map-label.playable{background:#285b3e;border-color:#285b3e;color:#fff;box-shadow:0 5px 22px #244b3938;z-index:3}.map-label.playable small{color:#d1e6bf}.map-label:hover{background:#e5f0db}.map-label.playable:hover{background:#17472d}.map-label:focus-visible{outline:3px solid #b76c48;outline-offset:3px}.map-label:after{content:'';position:absolute;bottom:-6px;left:50%;width:9px;height:9px;background:inherit;border-right:1px solid #b6c8aa;border-bottom:1px solid #b6c8aa;transform:translateX(-50%) rotate(45deg)}.map-label-layer[hidden]{display:none}@media(max-width:650px){.map-label{font-size:9px;max-width:92px;min-height:44px;padding:5px 7px}.map-label small{font-size:7px;letter-spacing:.35px}}`;
   host.append(mapStyle);
-  for(const org of organisations){const b=document.createElement('button');b.type='button';b.className='map-label'+(org.playable?' playable':'');b.style.visibility='hidden';b.innerHTML=org.playable?'<strong>Start here ↗</strong><small>Council · Housing repairs</small>':org.short+'<small>Coming later</small>';b.setAttribute('aria-label',org.name+(org.playable?', Start here, play housing repairs':', planned scenario, not playable'));b.onclick=()=>org.playable?onEnter():onOrganisation(org.id);mapOverlay.append(b);organisationMarkers.set(org.id,b);}
+  for(const org of organisations){const b=document.createElement('button');b.type='button';b.className='map-label'+(org.playable?' playable':org.shortCase?' short-case':'');b.style.visibility='hidden';b.innerHTML=org.playable?'<strong>Start here ↗</strong><small>Council · Housing repairs</small>':org.short+(org.shortCase?'<small>Play ↗</small>':'<small>Coming later</small>');b.setAttribute('aria-label',org.name+(org.playable?', Start here, play housing repairs':org.shortCase?', play scenario':', planned scenario, not playable'));b.onclick=()=>org.playable?onEnter():onOrganisation(org.id);mapOverlay.append(b);organisationMarkers.set(org.id,b);}
   const names={sam:'Sam',priya:'Priya',nia:'Nia',ellis:'Ellis',ruth:'Ruth',mo:'Mo'};
   for(const [id,name] of Object.entries(names)) {const b=document.createElement('button');b.type='button';b.className='world-label';b.textContent=name;b.setAttribute('aria-label','Walk over and speak to '+name);b.setAttribute('aria-pressed','false');b.hidden=true;b.onclick=()=>{if(state.knownPeople&&!state.knownPeople.includes(id))return;select(id);onSelect(id);};overlay.append(b);labels.set(id,b);}
   const route = new THREE.Group(); root.add(route);

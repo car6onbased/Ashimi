@@ -1,0 +1,26 @@
+.reading-page { max-width: 960px; margin: 0 auto; padding: clamp(22px,4vw,48px) clamp(0px,2vw,24px) 64px; }
+.reading-hero { background: #e8efe4; border-radius: 24px; padding: clamp(22px,5vw,52px); margin-bottom: 24px; }
+.reading-hero h1 { max-width: 18ch; font: 800 clamp(32px,6vw,65px)/1.08 Manrope,system-ui,sans-serif; margin: .3em 0; letter-spacing: -.045em; }
+.reading-hero p { max-width: 62ch; margin-bottom: 0; }
+.reading-kicker { color: #435f46; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.reading-page section { background: white; border: 1px solid #dce4d7; border-radius: 20px; margin-bottom: 14px; padding: clamp(17px,3vw,29px); }
+.reading-page h2,.reading-page h3 { line-height: 1.25; margin: 0 0 .6em; }
+.reading-page p { max-width: 68ch; }
+.reading-page p:last-child { margin-bottom: 0; }
+.reading-page a { color: #235346; text-underline-offset: 4px; font-weight: 700; }
+.reading-page details { border-top: 1px solid #dce4d7; padding: 6px 0; }
+.reading-page summary { cursor: pointer; min-height: 44px; padding: 9px 0; font-weight: 750; }
+.reading-flow { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.reading-flow li { background: #edf2e9; border-radius: 10px; padding: 8px 12px; font-weight: 700; }
+.reading-note { color: #53675c; font-size: 13px; }
+.reading-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: 12px; }
+.short-contacts { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit,minmax(min(100%,160px),1fr)); }
+.short-contacts button, #short-scenario button { padding: 10px 14px; min-height: 44px; border-radius: 10px; border: 1px solid #c7d6c5; background: #f7f8f2; color: #153e35; font: inherit; font-weight: 700; cursor: pointer; }
+#short-scenario button[aria-pressed=true] { background: #e1ecd9; border-color: #235346; }
+#short-scenario button:disabled { opacity: .55; cursor: default; }
+#short-scenario [data-record]:enabled { background: #153e35; color: white; }
+#short-scenario fieldset { border: 0; padding: 0; margin: 16px 0; }
+#short-scenario legend { font-weight: 800; }
+#short-scenario label { display: flex; align-items: center; gap: 8px; min-height: 44px; margin: 6px 0; border: 1px solid #dce4d7; border-radius: 10px; padding: 8px; cursor: pointer; }
+#short-scenario [data-reply], #short-scenario [data-result] { background: #edf2e9; padding: 14px; border-radius: 10px; }
+:where(.reading-page a,.reading-page button,.reading-page summary,.reading-page input):focus-visible { outline: 2px solid #235346; outline-offset: 3px; }
